@@ -5,7 +5,7 @@ angular.module('AIMJF')
 	.controller('JamatCtrl', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
 
 		$scope.getJamats = function () {
-			$http({ url: 'http://localhost:3000/api/v1/jamat' }).then(function (successResponse) {
+			$http({ url: 'http://localhost:3000/api/get_jamat' }).then(function (successResponse) {
 				$scope.jamats = successResponse.data;
 				return successResponse;
 			}, function (errorResponse) {
@@ -21,7 +21,7 @@ angular.module('AIMJF')
 		};
 
 		$scope.getCity = function () {
-			$http({ url: 'http://localhost:3000/api/v1/city' }).then(function (successResponse) {
+			$http({ url: 'http://localhost:3000/api/get_cities' }).then(function (successResponse) {
 				$scope.cities = successResponse.data;
 				return successResponse;
 			}, function (errorResponse) {
@@ -30,7 +30,7 @@ angular.module('AIMJF')
 		};
 		
 		$scope.getState = function () {
-			$http({ url: 'http://localhost:3000/api/v1/states' }).then(function (successResponse) {
+			$http({ url: 'http://localhost:3000/api/get_states' }).then(function (successResponse) {
 				$scope.states = successResponse.data;
 				return successResponse;
 			}, function (errorResponse) {
@@ -40,7 +40,7 @@ angular.module('AIMJF')
 
 		$scope.addJamat = function (newJamat) {
 
-			$http({ url: 'http://localhost:3000/api/v1/jamat', method: 'POST', data: newJamat }).then(function (successResponse) {
+			$http({ url: 'http://localhost:3000/api/create_jamat', method: 'POST', data: newJamat }).then(function (successResponse) {
 				$scope.getJamats();
 				return successResponse;
 			}, function (errorResponse) {

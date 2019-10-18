@@ -4,7 +4,7 @@ angular.module('AIMJF')
   .controller('LoginCtrl', ['$scope', '$timeout', '$http', '$state', function ($scope, $timeout, $http, $state) {
     $scope.userlogin = function (loginuser) {
       $http({
-        url: "http://localhost:3000/api/v1/login",
+        url: "http://localhost:3000/api/login",
         method: "POST",
         data: loginuser
       }).then(

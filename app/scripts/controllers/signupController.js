@@ -4,7 +4,7 @@ angular.module('AIMJF')
   .controller('SignupCtrl', ['$scope', '$timeout', '$http', '$state', function ($scope, $timeout, $http, $state) {
     $scope.usersignup = function (signupuser) {
       $http({
-        url: "http://localhost:3000/api/v1/signup",
+        url: "http://localhost:3000/api/signup",
         method: "POST",
         data: signupuser
       }).then(

@@ -5,7 +5,7 @@ angular.module('AIMJF')
 	.controller('CitiesCtrl', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
 		$scope.getCity = function () {
 			$http({
-				url: 'http://localhost:3000/api/v1/city'
+				url: 'http://localhost:3000/api/get_cities'
 			}).then(function (successResponse) {
 				$scope.cities = successResponse.data;
 				return successResponse;
@@ -22,7 +22,7 @@ angular.module('AIMJF')
 		$scope.addcities = function (newCities) {
 
 			$http({
-				url: 'http://localhost:3000/api/v1/cities',
+				url: 'http://localhost:3000/api/create_cities',
 				method: 'POST',
 				data: newCities
 			}).then(function (successResponse) {
@@ -39,7 +39,7 @@ angular.module('AIMJF')
             id:''
         };
         $scope.deleteCities = function (id) {
-            $http({ url: `http://localhost:3000/api/v1/cities/${id}`, method: 'DELETE', data: id }).then(function (successResponse) {
+            $http({ url: `http://localhost:3000/api/delete_cities${id}`, method: 'DELETE', data: id }).then(function (successResponse) {
                 // $scope.zones = successResponse.data;
                 $scope.getCity();
                 return successResponse;

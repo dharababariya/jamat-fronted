@@ -4,6 +4,8 @@
             <h1 class="page-header">Members</h1>
         </div>
         <div class="col-lg-2">
+                <input type="file" id="file1" name="image" accept="image/*" capture style="display:none"/>
+                <img src="http://macgroup.org/blog/wp-content/uploads/2011/10/iphone-camera-icon-150x150.jpg" id="upfile1" style="cursor:pointer" />
             <input id="chooseFile" type="file" file-model="picFile" />
             <img src="{{uploadedImage}}" />
         </div>
@@ -69,7 +71,7 @@
                                 <label class="control-label col-lg-3" for="f_name">First Name:</label>
                                 <div class="col-lg-9"
                                     ng-class="{ 'has-error' : addMemberForm.mname.$invalid && !addMemberForm.mname.$pristine }">
-                                    <input type="text" class="form-control" id="f_name" placeholder="Javed"
+                                    <input type="text" class="form-control" id="f_name" placeholder="Jack"
                                         ng-model="newmember.firstname" name="mname" ng-required="true">
                                     <div ng-show="addMemberForm.mname.$dirty && addMemberForm.mname.$invalid"
                                         class="help-block">
@@ -82,7 +84,7 @@
                                 <label class="control-label col-lg-3" for="m_name">Father Name:</label>
                                 <div class="col-lg-9"
                                     ng-class="{ 'has-error' : addMemberForm.father.$invalid && !addMemberForm.father.$pristine }">
-                                    <input type="text" class="form-control" id="m_name" placeholder="Avis"
+                                    <input type="text" class="form-control" id="m_name" placeholder="Avnic"
                                         ng-model="newmember.middlename" name="father" ng-required="true">
                                     <div ng-show="addMemberForm.father.$dirty && addMemberForm.father.$invalid"
                                         class="help-block">
@@ -96,7 +98,7 @@
                                 <label class="control-label col-lg-3" for="l_name">Surname:</label>
                                 <div class="col-lg-9"
                                     ng-class="{ 'has-error' : addMemberForm.sur.$invalid && !addMemberForm.sur.$pristine }">
-                                    <input type="text" class="form-control" id="l_name" placeholder="Salat"
+                                    <input type="text" class="form-control" id="l_name" placeholder="Androw"
                                         ng-model="newmember.lastname" name="sur" ng-required="true">
                                     <div ng-show="addMemberForm.sur.$dirty && addMemberForm.sur.$invalid"
                                         class="help-block">
@@ -144,7 +146,7 @@
                                     <div class="col-lg-4"
                                         ng-class="{ 'has-error' : addMemberForm.mContact.$invalid && !addMemberForm.mContact.$pristine }">
                                         <input type="number" class="form-control" id="contact_no" min="1000000000"
-                                            max="9999999999" name="mContact" placeholder="9022578254"
+                                            max="9999999999" name="mContact" placeholder="xxx xxx xxxx"
                                             ng-model="newmember.contact_no" ng-required="true">
                                         <div ng-show="addMemberForm.mContact.$dirty && addMemberForm.mContact.$invalid"
                                             class="help-block">
@@ -161,7 +163,7 @@
                                     <div class="col-lg-4"
                                         ng-class="{ 'has-error' : addMemberForm.mContact_2.$invalid && !addMemberForm.mContact_2.$pristine }">
                                         <input type="number" class="form-control" id="contact_no_2" min="1000000000"
-                                            max="9999999999" name="mContact_2" placeholder="9925483578"
+                                            max="9999999999" name="mContact_2" placeholder="xxx xxx xxxx"
                                             ng-model="newmember.contact_2">
                                     </div>
                                 </div>
@@ -171,7 +173,7 @@
                                 <div class="col-lg-9"
                                     ng-class="{ 'has-error' : addMemberForm.mEmail.$invalid && !addMemberForm.mEmail.$pristine }">
                                     <input type="email" name="mEmail" class="form-control" id="email_id"
-                                        placeholder="javed@example.com" ng-model="newmember.email" ng-required="true">
+                                        placeholder="androw@example.com" ng-model="newmember.email" ng-required="true">
                                     <div ng-show="addMemberForm.mEmail.$dirty && addMemberForm.mEmail.$invalid"
                                         class="help-block">
                                         <span ng-show="addMemberForm.mEmail.$error.required">Tell us your email.</span>
@@ -211,7 +213,7 @@
                                 <div class="col-lg-9"
                                     ng-class="{ 'has-error' : addMemberForm.address.$invalid && !addMemberForm.address.$pristine }">
                                     <input type="text" class="form-control" id="p_address_1"
-                                        placeholder="102 Shantivan Appartment" ng-model="newmember.home.address1"
+                                        placeholder="a/102 Silver Appartment" ng-model="newmember.home.address1"
                                         ng-required="true" name="address">
                                     <div ng-show="addMemberForm.address.$dirty && addMemberForm.address.$invalid"
                                         class="help-block">
@@ -333,7 +335,7 @@
                                 <label class="control-label col-lg-3" for="b_name">Business:</label>
                                 <div class="col-lg-9"
                                     ng-class="{ 'has-error' : addMemberForm.business.$invalid && !addMemberForm.business.$pristine }">
-                                    <input type="text" class="form-control" id="b_name" placeholder="Symbuzz"
+                                    <input type="text" class="form-control" id="b_name" placeholder="Relince Market"
                                         ng-model="newmember.business" ng-required="true" name="business">
                                     <div ng-show="addMemberForm.business.$dirty && addMemberForm.business.$invalid"
                                         class="help-block">
@@ -354,7 +356,7 @@
                             <div class="row form-group">
                                 <label class="control-label col-lg-3" for="w_name">Website:</label>
                                 <div class="col-lg-9">
-                                    <input type="text" class="form-control" id="w_name" placeholder="www.symbuzz.com"
+                                    <input type="text" class="form-control" id="w_name" placeholder="www.relince.com"
                                         ng-model="newmember.website">
                                 </div>
                             </div>
@@ -414,7 +416,7 @@
                                 <label class="control-label col-lg-3" for="b_address">Address:</label>
                                 <div class="col-lg-9">
                                     <input type="text" class="form-control" id="b_address_1"
-                                        placeholder="80 Shantivan Appartment" ng-model="newmember.work.address1">
+                                        placeholder="801 Silver Appartment" ng-model="newmember.work.address1">
                                 </div>
                             </div>
                             <!-- Address 2 Section -->

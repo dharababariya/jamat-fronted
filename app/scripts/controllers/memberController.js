@@ -8,7 +8,7 @@ angular.module("AIMJF").controller("MemberCtrl", [
   function ($scope, $timeout, $http, $state) {
     $scope.getJamats = function () {
       $http({
-        url: "http://localhost:3000/api/v1/jamat"
+        url: "http://localhost:3000/api/get_jamat"
       }).then(
         function (successResponse) {
           $scope.jamats = successResponse.data;
@@ -30,7 +30,7 @@ angular.module("AIMJF").controller("MemberCtrl", [
 
     $scope.addMember = function (newMember) {
       $http({
-        url: "http://localhost:3000/api/v1/member",
+        url: "http://localhost:3000/api/create_member",
         method: "POST",
         data: newMember
       }).then(
@@ -46,7 +46,7 @@ angular.module("AIMJF").controller("MemberCtrl", [
 
     $scope.getCity = function () {
       $http({
-        url: "http://localhost:3000/api/v1/city"
+        url: "http://localhost:3000/api/get_cities"
       }).then(
         function (successResponse) {
           $scope.cities = successResponse.data;
@@ -60,7 +60,7 @@ angular.module("AIMJF").controller("MemberCtrl", [
 
     $scope.getState = function () {
       $http({
-        url: "http://localhost:3000/api/v1/states"
+        url: "http://localhost:3000/api/get_states"
       }).then(
         function (successResponse) {
           $scope.states = successResponse.data;
@@ -74,7 +74,7 @@ angular.module("AIMJF").controller("MemberCtrl", [
 
     $scope.getDistricts = function () {
       $http({
-        url: "http://localhost:3000/api/v1/district"
+        url: "http://localhost:3000/api/get_district"
       }).then(
         function (successResponse) {
           $scope.districts = successResponse.data;
